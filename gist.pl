@@ -26,6 +26,11 @@ sub func() {
 
 ### judge condition ###
 
+## simple if
+$variable = $condition ? $value_if_true : $value_if_false;
+my $age = 20;
+my $is_adult = $age >= 18 ? "Yes" : "No";
+
 ## if not condition
 
 unless (condition) {
@@ -104,6 +109,7 @@ my $min_value = min @array;
 ## get last index
 
 my $last_index = $#array;
+$last_index = $#$array_ref;
 
 ## iter array
 
@@ -137,6 +143,10 @@ my @array = map { $_ * 2 + 1 } (0 .. 9);
 my @array = map { 1 } (1 .. 10);
 my @array = (1) x 10;
 
+## slice
+my @slice = @array[1 .. 3];
+@slice = @{$array_ref}[2 .. 4];
+my $slice = [@{$array_ref}[2 .. 4]];
 ## combine two arrays
 
 # Using the array concatenation operator
