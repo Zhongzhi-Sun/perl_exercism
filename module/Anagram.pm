@@ -37,19 +37,19 @@ sub gene_array_by_word ($word) {
 }
 
 sub match_anagrams ( $subject, $candidates ) {
-    my $uc_sub = lc $subject;
-    my $sub_arr = gene_array_by_word($uc_sub);
+    my $lc_sub = lc $subject;
+    my $sub_arr = gene_array_by_word($lc_sub);
     # print "subarr = @$sub_arr\n";
     my @res;
     foreach my $word (@$candidates) {
         my $uc_word = lc $word;
-        if ($uc_sub ne $uc_word) {
+        if ($lc_sub ne $uc_word) {
             # print "word uc = $uc_word\n";
             my $word_arr = gene_array_by_word($uc_word);
             # print "wordarr = @$word_arr\n";
             my $arr_eq = arrays_equal($sub_arr,$word_arr);
             if ($arr_eq eq 1) {
-                # print "$uc_sub; $uc_word; $arr_eq\n";
+                # print "$lc_sub; $uc_word; $arr_eq\n";
                 push(@res, $word);
             }
         }
