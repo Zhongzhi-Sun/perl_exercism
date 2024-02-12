@@ -27,3 +27,12 @@ sub compare_lists ($list1, $list2) {
 }
 
 1; # Ensure the module returns a true value
+
+=pod
+Consolidated Logic: The judge_superlist and judge_list_eq functions are combined and simplified into a single function is_sublist for clarity. This function checks if the first list is a sublist of the second.
+
+Use of Smart Match Operator (~~): For checking equality of the entire lists, the smart match operator ~~ is used, providing a concise way to compare arrays directly. However, be cautious with the smart match operator as its behavior has been a subject of debate and change in different Perl versions. Ensure it behaves as expected in your environment or consider a manual loop for equality checking if compatibility is a concern.
+
+String Comparison Optimization: The sublist check uses string comparison for segments of the list. This is a simplification and may not be suitable for all data types (e.g., if lists contain complex objects). Adjust based on your specific requirements.
+
+=cut
